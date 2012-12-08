@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 public class Panel extends JPanel {
 
-	BufferedImage image1, image2;
+	BufferedImage image1, image2, thing;
 
 	public Panel() {
 		try {
@@ -20,21 +20,32 @@ public class Panel extends JPanel {
 			image2 = ImageIO.read(getClass().getResource(
 					"/resources/testimage.png"));
 
-			Graphics2D g = (Graphics2D) image1.getGraphics();
-			g.setColor(new Color(255, 100, 0));
-			g.drawLine(10, 10, 100, 100);
-
 		} catch (IOException e) {
 			System.err.println("testimage fail");
 		}
 	}
 
+	public void imageThing() {
+		System.out.println("created thing");
+		thing = (BufferedImage) createImage(100, 100);
+
+		Graphics2D g = (Graphics2D) thing.getGraphics();
+		g.setColor(new Color(255, 100, 0));
+		g.drawOval(50, 50, 80, 80);
+		g.drawLine(10, 10, 100, 100);
+
+	}
+
 	@Override
 	public void paint(Graphics g) {
-		if (image2 != null)
-			g.drawImage(image2, 0, 0, this);
-		if (image1 != null)
-			g.drawImage(image1, 0, 0, this);
+		// if (image1 != null)
+		// g.drawImage(image1, 0, 0, this);
+		// if (image2 != null)
+		// g.drawImage(image2, 0, 0, this);
+
+		if (thing != null)
+			g.drawImage(thing, 0, 0, this);
+
 	}
 
 }
