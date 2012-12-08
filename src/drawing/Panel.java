@@ -9,12 +9,14 @@ import javax.swing.JPanel;
 
 public class Panel extends JPanel {
 
-	BufferedImage image;
+	BufferedImage image1, image2;
 
 	public Panel() {
 
 		try {
-			image = ImageIO.read(getClass().getResource(
+			image1 = ImageIO.read(getClass().getResource(
+					"/resources/cookie.png"));
+			image2 = ImageIO.read(getClass().getResource(
 					"/resources/testimage.png"));
 		} catch (IOException e) {
 			System.err.println("testimage fail");
@@ -23,8 +25,10 @@ public class Panel extends JPanel {
 
 	@Override
 	public void paint(Graphics g) {
-		if (image != null)
-			g.drawImage(image, 100, 100, this);
+		if (image2 != null)
+			g.drawImage(image2, 0, 0, this);
+		if (image1 != null)
+			g.drawImage(image1, 0, 0, this);
 	}
 
 }
