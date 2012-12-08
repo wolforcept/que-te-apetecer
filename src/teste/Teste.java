@@ -28,7 +28,15 @@ public class Teste {
 		Thread.sleep(1000);
 
 		panel.imageThing();
+		
+		runner(panel);
 
+	}
+	
+	public static void runner(Panel panel) {
+		while(true) {
+			panel.repaint();
+		}
 	}
 
 }
