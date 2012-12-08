@@ -14,8 +14,8 @@ public class Panel extends JPanel {
 	public Panel() {
 
 		try {
-			image = ImageIO
-					.read(getClass().getResource("resources/cookie.png"));
+			image = ImageIO.read(getClass().getResource(
+					"/resources/testimage.png"));
 		} catch (IOException e) {
 			System.err.println("testimage fail");
 		}

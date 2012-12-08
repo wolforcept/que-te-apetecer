@@ -23,6 +23,8 @@ public class Teste {
 
 		frame.add(panel);
 
+		frame.setVisible(true);
+
 	}
 
 }
