@@ -8,7 +8,7 @@ import drawing.Panel;
 
 public class Teste {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		System.out.println("Hello world");
 		System.out.println("Such a nice day");
 
@@ -24,6 +24,10 @@ public class Teste {
 		frame.add(panel);
 
 		frame.setVisible(true);
+
+		Thread.sleep(1000);
+
+		panel.imageThing();
 
 	}
 
